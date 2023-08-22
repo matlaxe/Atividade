@@ -1,0 +1,300 @@
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View ,TextInput , Image , ScrollView,Button, Alert} from 'react-native';
+import React,{useState} from 'react';
+
+export default function App(){
+  
+
+    const [matricula, setMatricula] = useState(0)
+    const matInteira=()=>{
+      setMatricula(parseInt(matricula))
+    }
+    const [nome, setNome] = useState(" ")
+    const [logradouro, setLogradouro] = useState(" ")
+    const [numero, setNumero] = useState(0)
+    const nunInteira=()=>{
+      setNumero(parseInt(numero))
+    }
+    const [bairro, setBairro] = useState(" ")
+   
+    const [cep, setCep] = useState(0)
+    const cepInteira=()=>{
+      setCep(parseInt(cep))}
+
+    const [cidade, setCidade] = useState(" ")
+    const [uf, setUf] = useState(" ")
+
+    const showAlert = () => {
+    window.alert('VOCÊ PRESSIONOU O BOTÃO!!!')
+  };
+    
+    
+    
+    return (
+      <View style={styles.container}>
+      <Text style = {styles.display}>Empresa XPTO </Text> 
+      <Image style= {styles.imagem}
+        resizeMode='stetch'
+        source={require('./imagens/MAGU.png')}/>
+
+      <Text style = {styles.display1}>CADASTRAMENTO DE CLIENTES</Text>
+
+
+
+      <Text style = {styles.label}>Matricula</Text>
+      
+      <TextInput
+      style = {styles.matricula}
+      value = {String(matricula)} 
+      onChangeText = {(texto) => (setMatricula(texto))}> 
+      </TextInput>
+
+      <Text style = {styles.label1}>Nome</Text>
+
+      <TextInput
+      style = {styles.nome}
+      value = {String(nome)} 
+      onChangeText = {(texto) => (setNome(texto))}
+      >
+      </TextInput>
+
+      <Text style = {styles.label2}>Logradouro</Text>
+      <TextInput
+        style = {styles.logradouro}
+        value = {String(logradouro)} 
+        onChangeText = {(texto) => (setLogradouro(texto))}>
+        </TextInput>
+      
+      <Text style = {styles.label3}>Numero</Text>
+      <TextInput
+        style = {styles.numero}
+        value = {String(numero)} 
+        onChangeText = {(texto) => (setNumero(texto))}>
+        </TextInput>
+      
+      <Text style = {styles.label4}>Bairro</Text>
+      <TextInput
+        style = {styles.bairro}
+        value = {String(bairro)} 
+        onChangeText = {(texto) => (setBairro(texto))}>
+        </TextInput>
+      
+      <Text style = {styles.label5}>CEP</Text>
+      <TextInput
+        style = {styles.cep}
+        value = {String(cep)} 
+        onChangeText = {(texto) => (setCep(texto))}>
+        </TextInput>
+
+      <Text style = {styles.label6}>Cidade</Text>
+      <TextInput
+        style = {styles.cidade}
+        value = {String(cidade)} 
+        onChangeText = {(texto) => (setCidade(texto))}>
+      </TextInput>
+
+      <Text style = {styles.label7}>UF</Text>
+      <TextInput
+        style = {styles.uf}
+        value = {String(uf)} 
+        onChangeText = {(texto) => (setUf(texto))}>
+      </TextInput>    
+
+
+
+
+
+      <Button 
+          title = "NÃO CLIQUE!!!"
+          onPress={showAlert}
+      />
+
+
+
+      <StatusBar style="auto" />
+
+      <ScrollView style = {styles.ScrollView} >
+      <Text style={styles.text}>
+      {'\n'}
+      Matheus Da Silveira Laxe Tavares {'\n'}
+      202103060196{'\n'}
+      Daniel Da Silva Ferreira de Siqueira{'\n'}
+      202008530466{'\n'}
+      Johann Miranda Hammerschalag{'\n'}
+      202008049229{'\n'}
+
+
+      </Text>
+      </ScrollView>
+
+      
+
+
+      </View>
+
+
+
+
+      );
+  }
+      
+
+  const styles = StyleSheet.create({
+        container: {
+          flex: 1,
+          backgroundColor: '#aaa', //ALTERA A COR DO BACKGROUND
+          marginTop: 20, //MARGEM DO TOPO DO CONTAINER PARA A TELA
+        
+        },
+
+        label:{
+          margin: 5,
+          marginLeft:10,
+        },
+
+        label1:{
+          margin:5,
+          marginLeft:10,
+        },
+        label2:{
+          margin:5,
+          marginLeft:10,
+        },
+
+        label3:{
+          margin:5,
+          marginLeft:10,
+        },
+
+        label4:{
+          margin:5,
+          marginLeft:10,
+        },
+
+        label5:{
+          margin:5,
+          marginLeft:10,
+        },
+        
+        label6:{
+          margin:5,
+          marginLeft:10,
+        },
+
+        label7:{
+          margin:5,
+          marginLeft:10,
+        },
+
+        display: {
+          ///marginHorizontal: 'auto', 
+          marginLeft: 130,
+          margin: 10,
+          //marginLeft: 20, //MARGEM ESQUERDA DO TEXTO
+        },
+
+        display1: { //SEGUNDA LINHA DE TEXTO
+          marginLeft: 80, //MARGEM ESQUERDA DO TEXTO
+          margin:10,
+        },
+
+        matricula: { //CAIXA DE TEXTO PARA MATRICULA
+          marginTop:1,
+          width:100,
+          height:20,
+          backgroundColor: '#FFF',
+          borderEndWidth: 1,
+          marginLeft: 10, //MARGEM ESQUERDA DO TEXTO
+          padding: 2, //ESPACO ENTRA A ENTRADA DE DADOS E A BORDA
+          
+        },
+
+        nome: { //CAIXA DE TEXTO PARA NOME
+          marginTop:1,
+          width:300,
+          height:20,
+          backgroundColor: '#FFF',
+          borderEndWidth: 1,
+          marginLeft: 10, //MARGEM ESQUERDA DO TEXT
+          padding: 2, //ESPACO ENTRA A ENTRADA DE DADOS E A BORDA
+        },
+
+        logradouro: { //CAIXA DE TEXTO PARA NOME
+          marginTop:1,
+          width:300,
+          height:20,
+          backgroundColor: '#FFF',
+          borderEndWidth: 1,
+          marginLeft: 10, //MARGEM ESQUERDA DO TEXT
+          padding: 2, //ESPACO ENTRA A ENTRADA DE DADOS E A BORDA
+        },
+
+        numero: { 
+          marginTop:1,
+          width:40,
+          height:20,
+          backgroundColor: '#FFF',
+          borderEndWidth: 1,
+          marginLeft: 10, 
+          padding: 2,
+        },
+
+        bairro: { 
+          marginTop:1,
+          width:110,
+          height:20,
+          backgroundColor: '#FFF',
+          borderEndWidth: 1,
+          marginLeft: 10,
+          padding: 2,
+          
+        },
+
+        cep:{ 
+          marginTop:1,
+          width:90,
+          height:20,
+          backgroundColor: '#FFF',
+          borderEndWidth: 1,
+          marginLeft: 10,
+          padding: 2,
+          
+        },
+
+        cidade: { 
+          marginTop:1,
+          width:120,
+          height:20,
+          backgroundColor: '#FFF',
+          borderEndWidth: 1,
+          marginLeft: 10,
+          padding: 2,
+          
+        },
+
+        uf: { 
+          marginTop:1,
+          width:30,
+          height:20,
+          backgroundColor: '#FFF',
+          borderEndWidth: 1,
+          marginLeft: 10,
+          padding: 2,
+          
+        },
+
+
+
+
+
+        imagem:{
+          width: 100,
+          height: 100,
+          marginLeft: 130,
+          marginTop: 0,
+
+        }
+
+
+        });
+
